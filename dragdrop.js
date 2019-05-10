@@ -1,4 +1,8 @@
+// Funkcija koju pozivam kada su mi svi divovi puni sa draggable images
 
+function areAllDropsFilled() {
+  return [].slice.call(document.querySelectorAll('.box2')).every(box => box.childNodes.length > 0);
+}
 // shuffle
 
 function shuffle() {
@@ -24,25 +28,29 @@ function shuffleArray(array) {
   return array;
 }
 
-function areAllDropsFilled() {
-  return [].slice.call(document.querySelectorAll('.box2')).every(box => box.childNodes.length > 0);
-}
+let counter = 0;
+let guessesLeft = 3;
 
+// Function triggering drag events
 $(function () {
+  counter = 2;
   var result = {};
   $(".task").draggable({
-    revert: function () {
-      if (result.drag == result.drop) {
-        return false;
-      } else { return true; }
-    },
+      revert: function () {
+        if (result.drag == result.drop) {
+          return false;
+        } else {
+          return true;
+        }
+      },
 
-    start: function (e) {
-      result.drag = e.target.id.split("_")[1];
-    }
-  },//end dragable
+      start: function (e) {
+        result.drag = e.target.id.split("_")[1];
+      }
+    }, //end dragable
 
-  ); $(".box2").droppable({
+  );
+  $(".box2").droppable({
     drop: function (event, ui) {
       var $this = $(this);
       result.drop = event.target.id.split("_")[1];
@@ -58,12 +66,18 @@ $(function () {
           using: function (pos) {
             $(this).animate(pos, "slow", "linear");
           }
-        })//end postion
+        }) //end postion
 
 
-      }//end if statment
-      if (areAllDropsFilled()) {
+      } //end if statment
+      else if (areAllDropsFilled()) {
         alert('you finished!');
+      } else if (counter == 0) {
+        alert('game over, try again')
+
+      } else {
+        counter -= 1;
+        alert('false')
       }
     } //end drop function
   }) //end dropable
