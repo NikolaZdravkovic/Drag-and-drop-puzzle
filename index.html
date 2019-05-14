@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  
+
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
@@ -20,29 +20,32 @@
   <div class="info">
     <div id="title">PUZZLE</div>
     <div id="rest">Drag and drop images from the left in to the empty fields on the right </div>
-    <div id="rest2">You can only drop the right puzzle piece on the right spot.</div>
+    <div id="rest2">You can only drop the right puzzle piece on the right spot.</div><br>
+    <button onclick="shuffle()">
+      START GAME
+    </button><br>
   </div>
   <div class="wrapper">
     <div id="tasks">
-      <img class="task" data-id='1' id="img_1" src="img/puzz1.jpg" >
-      <img class="task" data-id='2' id="img_2" src="img/puzz2.jpg" >
-      <img class="task" data-id='3' id="img_3" src="img/puzz3.jpg" >
-      <img class="task" data-id='4' id="img_4" src="img/puzz4.jpg" >
-      <img class="task" data-id='5' id="img_5" src="img/puzz5.jpg" >
-      <img class="task" data-id='6' id="img_6" src="img/puzz6.jpg" >
-      <img class="task" data-id='7' id="img_7" src="img/puzz7.jpg" >
-      <img class="task" data-id='8' id="img_8" src="img/puzz8.jpg" >
-      <img class="task" data-id='9' id="img_9" src="img/puzz9.jpg" >
+      <img class="task" data-id='1' id="img_1" src="img/puzz1.jpg">
+      <img class="task" data-id='2' id="img_2" src="img/puzz2.jpg">
+      <img class="task" data-id='3' id="img_3" src="img/puzz3.jpg">
+      <img class="task" data-id='4' id="img_4" src="img/puzz4.jpg">
+      <img class="task" data-id='5' id="img_5" src="img/puzz5.jpg">
+      <img class="task" data-id='6' id="img_6" src="img/puzz6.jpg">
+      <img class="task" data-id='7' id="img_7" src="img/puzz7.jpg">
+      <img class="task" data-id='8' id="img_8" src="img/puzz8.jpg">
+      <img class="task" data-id='9' id="img_9" src="img/puzz9.jpg">
 
 
 
-     
+
 
     </div>
 
     <div id="drops">
       <div id="drop_1" data-id='1' class="box2"></div>
-      <div id="drop_2"  data-id='2'class="box2"></div>
+      <div id="drop_2" data-id='2' class="box2"></div>
       <div id="drop_3" data-id='3' class="box2"></div>
       <div id="drop_4" data-id='4' class="box2"></div>
       <div id="drop_5" data-id='5' class="box2"></div>
@@ -55,11 +58,21 @@
 
     </div>
   </div>
-  <button onclick="shuffle()">
-    START
-  </button>
- 
-  <script src="dragdrop.js"></script>
+
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>Game over, please try again</p>
+      <button id="myBtn">Try again</button>
+
+    </div>
+  </div>
+
+  <script src="dragdrop3.js"></script>
 </body>
 
 </html>

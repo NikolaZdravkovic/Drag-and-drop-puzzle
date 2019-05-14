@@ -10,47 +10,51 @@ body {
   color: #444;
 }
 
-#box { display: grid;
+#box {
+  display: grid;
   grid-template-columns: auto auto;
-  
+
   color: #fff;
   border-radius: 5px;
   padding: 20px;
   width: 0%;
-  
- 
+
+
 }
-.box2{
+
+.box2 {
   background-color: grey;
- 
+
 }
 
 .task {
-  background-color: #444;;
+  background-color: #444;
+  ;
   color: black;
   padding: 0px;
   margin: 0px;
   position: relative;
 }
+
 .info {
-  position:relative;
-  font-family:Arial;
-  margin:10px;
-  text-align:center;
-  border-radius:5px;
-  font-size:15px;
+  position: relative;
+  font-family: Arial;
+  margin: 10px;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 15px;
 }
 
 #title {
-  font-size:20px;
+  font-size: 20px;
 }
 
 #rest2 {
-  font-size:13px;
+  font-size: 13px;
 }
 
 #text div {
-  position:relative;
+  position: relative;
   height: 200px;
   width: 200px;
   border: 2px dashed black;
@@ -59,13 +63,14 @@ body {
 }
 
 #text {
-  
- 
- height: 420px;
- width: 420px;
+
+
+  height: 420px;
+  width: 420px;
 }
 
-#images { display: grid;
+#images {
+  display: grid;
   grid-template-columns: auto auto;
   width: 0%
 }
@@ -81,13 +86,62 @@ img {
 
 
 #drops {
-	display: inline-block;
+  display: inline-block;
 }
 
 .box2 {
-	width: 200px;
-	height: 200px;
-	border: 1px solid black;
-	display: inline-block;
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  display: inline-block;
   box-sizing: border-box;
+}
+
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }

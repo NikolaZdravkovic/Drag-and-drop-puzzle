@@ -28,12 +28,21 @@ function shuffleArray(array) {
   return array;
 }
 
-let counter = 0;
-let guessesLeft = 3;
+const counter = 0;
+const guessesLeft = 3;
+const modal = document.getElementById("myModal");
+const btn = document.getElementById("myBtn");
 
-// Function triggering drag events
+btn.addEventListener('click', restart)
+
+function restart() {
+  window.location.reload();
+}
+
+
+
 $(function () {
-  counter = 2;
+  let counter = 3;
   var result = {};
   $(".task").draggable({
       revert: function () {
@@ -70,14 +79,19 @@ $(function () {
 
 
       } //end if statment
-      else if (areAllDropsFilled()) {
-        alert('you finished!');
-      } else if (counter == 0) {
-        alert('game over, try again')
+      else if (counter == 1) {
+        // alert('game over, try again')
+        modal.style.display = 'block';
+
+
 
       } else {
         counter -= 1;
-        alert('false')
+        alert(`false, you have ${counter} guesess left`)
+      }
+
+      if (areAllDropsFilled()) {
+        alert('Congrats! You finished!');
       }
     } //end drop function
   }) //end dropable
